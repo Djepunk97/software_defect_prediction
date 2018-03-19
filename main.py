@@ -18,7 +18,7 @@ if __name__ == "__main__":
     # fs_functions: pearson, fisher, greedy_auc, greedy_gmeans
 
     # fs_functions defines the forward selection functions
-    parser.add_argument('-fs', '--fs_functions', nargs="+", required=True,
+    parser.add_argument('-fs', '--fs_functions', nargs="+", default="pearson",
                         choices=["pearson", "fisher", "greedy"])
 
     parser.add_argument('-m', '--method', default="forward_selection",
@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     parser.add_argument('-n', '--n_clfs', default=5, type=int)
 
-    parser.add_argument('-s', '--score_name', required=True, 
+    parser.add_argument('-s', '--score_name', default="auc", 
                         choices=["auc","gmeans"])
 
     args = parser.parse_args()      
